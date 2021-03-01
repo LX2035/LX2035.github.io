@@ -8,7 +8,7 @@
     <link href="/2021/03/01/20200301/"/>
     <url>/2021/03/01/20200301/</url>
     
-    <content type="html"><![CDATA[<pre><code>                          落花人独立，微雨燕双飞。</code></pre><h2 id="常用工具总结"><a href="#常用工具总结" class="headerlink" title="常用工具总结"></a>常用工具总结</h2><h3 id="机械建模"><a href="#机械建模" class="headerlink" title="机械建模"></a>机械建模</h3><blockquote><p>catia</p><blockquote><p><img src="https://baike.baidu.com/pic/CATIA/382683/0/9c16fdfaaf51f3de64b73a7e9feef01f3a2979a7?fr=lemma&ct=single#aid=0&pic=9c16fdfaaf51f3de64b73a7e9feef01f3a2979a7" alt="logo"></p></blockquote></blockquote><h3 id="博客主题"><a href="#博客主题" class="headerlink" title="博客主题"></a>博客主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#主题采用 Hexo Fluid</span><br></code></pre></td></tr></table></figure><p>链接: <a href="https://github.com/fluid-dev/hexo-theme-fluid">server</a></p>]]></content>
+    <content type="html"><![CDATA[<p>落花人独立，微雨燕双飞。</p><h2 id="常用工具总结"><a href="#常用工具总结" class="headerlink" title="常用工具总结"></a>常用工具总结</h2><h3 id="机械建模"><a href="#机械建模" class="headerlink" title="机械建模"></a>机械建模</h3><blockquote><p>catia</p><blockquote><p><img src="/png/catia.png" alt="logo"></p></blockquote></blockquote><h3 id="博客主题"><a href="#博客主题" class="headerlink" title="博客主题"></a>博客主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#主题采用 Hexo Fluid</span><br></code></pre></td></tr></table></figure><p>链接: <a href="https://github.com/fluid-dev/hexo-theme-fluid">server</a></p>]]></content>
     
     
     
