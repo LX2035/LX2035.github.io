@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>第二篇博客测试</title>
+    <link href="/2021/03/01/20200301/"/>
+    <url>/2021/03/01/20200301/</url>
+    
+    <content type="html"><![CDATA[<p>春风桃李一杯酒，江湖夜雨十年灯</p><h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#一个爱好电子的小码农</span><br><span class="hljs-comment">#喜欢单片机，机器人设计，传感器等</span><br></code></pre></td></tr></table></figure><h3 id="博客主题"><a href="#博客主题" class="headerlink" title="博客主题"></a>博客主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#主题采用 Hexo Fluid</span><br></code></pre></td></tr></table></figure><p>链接: <a href="https://github.com/fluid-dev/hexo-theme-fluid">server</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Welcome to my blog</title>
     <link href="/2021/02/26/hello-world/"/>
     <url>/2021/02/26/hello-world/</url>
