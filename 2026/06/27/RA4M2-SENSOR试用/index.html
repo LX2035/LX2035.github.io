@@ -86,7 +86,7 @@
 <meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/05/868286c06fb7eeea5a7d0a250c8a277a.png">
 <meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/8426904cbae0b543aeafdf25dd3705a7.png">
 <meta property="article:published_time" content="2026-06-27T12:24:18.000Z">
-<meta property="article:modified_time" content="2026-06-27T12:25:13.404Z">
+<meta property="article:modified_time" content="2026-06-27T12:31:18.916Z">
 <meta property="article:author" content="LX2035">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2026/05/3a05caf8d76a557bd70b9d19096044bb.png">
@@ -500,7 +500,7 @@
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/3dc218b135f37a0b8a182c0fb57b41f0.png" srcset="/img/loading.gif" lazyload alt="image-20260524230429902"></p>
 <p>【RA4M2-SENSOR】开发板基本使用</p>
 <p>上一篇记录了开发工具的选择，这一篇文章记录一下具体的一些外设的使用</p>
-<h2 id="3、led操作"><a href="#3、led操作" class="headerlink" title="3、led操作"></a>3、led操作</h2><p>一般开发板第一件事都是点亮led，也就是操作GPIO口，从原理图可以看到对应的GPIO是P002, P103 P104这三个IO口</p>
+<h2 id="4、led操作"><a href="#4、led操作" class="headerlink" title="4、led操作"></a>4、led操作</h2><p>一般开发板第一件事都是点亮led，也就是操作GPIO口，从原理图可以看到对应的GPIO是P002, P103 P104这三个IO口</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/85e6cd2d3c8c481c2597ec93664ca631.png" srcset="/img/loading.gif" lazyload alt="image-20260524230652707"></p>
 <p>且应该是高有效，在pin里面选择</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/74d53b1e44b595c1e5dd9ef402b4a53f.png" srcset="/img/loading.gif" lazyload alt="image-20260524230947219"></p>
@@ -518,7 +518,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* 流水灯实现 */</span><br><span class="hljs-type">uint32_t</span> led_pattern = <span class="hljs-number">0</span>;  <span class="hljs-comment">// LED模式变量</span><br><br><span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;<br>    <span class="hljs-keyword">switch</span> (led_pattern % <span class="hljs-number">3</span>) &#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:<br>            <span class="hljs-comment">// 点亮P002 LED，熄灭其他</span><br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_00_PIN_02, BSP_IO_LEVEL_HIGH);<br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_01_PIN_03, BSP_IO_LEVEL_LOW);<br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_01_PIN_04, BSP_IO_LEVEL_LOW);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:<br>            <span class="hljs-comment">// 点亮P103 LED，熄灭其他</span><br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_00_PIN_02, BSP_IO_LEVEL_LOW);<br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_01_PIN_03, BSP_IO_LEVEL_HIGH);<br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_01_PIN_04, BSP_IO_LEVEL_LOW);<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>            <span class="hljs-comment">// 点亮P104 LED，熄灭其他</span><br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_00_PIN_02, BSP_IO_LEVEL_LOW);<br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_01_PIN_03, BSP_IO_LEVEL_LOW);<br>            R_IOPORT_PinWrite(&amp;g_ioport_ctrl, BSP_IO_PORT_01_PIN_04, BSP_IO_LEVEL_HIGH);<br>            <span class="hljs-keyword">break</span>;<br>    &#125;<br><br>    led_pattern++;  <span class="hljs-comment">// 切换到下一个模式</span><br><br>    <span class="hljs-comment">/* 延时500ms */</span><br>    R_BSP_SoftwareDelay(<span class="hljs-number">500</span>, BSP_DELAY_UNITS_MILLISECONDS);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>这里操作GPIO的函数是R_IOPORT_PinWrite，并且有自己的延时函数R_BSP_SoftwareDelay，下载到开发板上可以看到开发板上的三个led轮流闪烁。</p>
-<h2 id="4、按键操作"><a href="#4、按键操作" class="headerlink" title="4、按键操作"></a>4、按键操作</h2><p>从原理图上可以看到自定义按键对应这三个io口，而且是默认上拉的，按下就变成低电平</p>
+<h2 id="5、按键操作"><a href="#5、按键操作" class="headerlink" title="5、按键操作"></a>5、按键操作</h2><p>从原理图上可以看到自定义按键对应这三个io口，而且是默认上拉的，按下就变成低电平</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/3844f68b32cbd721ffbbf3f1104ba55f.png" srcset="/img/loading.gif" lazyload alt="image-20260524231850179"></p>
 <p>因此在配置工具上对这三个IO口进行操作，设置为输入模式</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/66454e2b2d9e9ce206a2a88ab40e62ae.png" srcset="/img/loading.gif" lazyload alt="image-20260524232004696"></p>
@@ -533,7 +533,7 @@
 
 <p>读取io口电平的函数是R_IOPORT_PinRead，下载到开发板就可以看到对应的现象了。</p>
 <p>【RA4M2-SENSOR】基本外设使用记录</p>
-<h2 id="5、e2s使用"><a href="#5、e2s使用" class="headerlink" title="5、e2s使用"></a>5、e2s使用</h2><p>上一篇文章已经介绍完了开发板的基本入门，这一篇介绍一个新工具，我之前一直用keil的，看一些资料才看到了这个，所以我开篇就很推荐这个工具。</p>
+<h2 id="6、e2s使用"><a href="#6、e2s使用" class="headerlink" title="6、e2s使用"></a>6、e2s使用</h2><p>上一篇文章已经介绍完了开发板的基本入门，这一篇介绍一个新工具，我之前一直用keil的，看一些资料才看到了这个，所以我开篇就很推荐这个工具。</p>
 <p>就是这个e2s</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/15632ca3154ec9449221d4a8a05bd92c.png" srcset="/img/loading.gif" lazyload alt="image-20260524232543729"></p>
 <p>感觉这个应该才是官方主推的，新建一个工程</p>
@@ -556,14 +556,14 @@
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/a5afed76f315c3aa22d60817be560b02.png" srcset="/img/loading.gif" lazyload alt="image-20260524233219203"></p>
 <p>就和之前的一样了</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/85de0d94e47b9559714a3d35894b8a1c.png" srcset="/img/loading.gif" lazyload alt="image-20260524233238608"></p>
-<h2 id="6、时钟配置"><a href="#6、时钟配置" class="headerlink" title="6、时钟配置"></a>6、时钟配置</h2><p>参考原理图，时钟选择的是外部高速时钟源12Mhz的</p>
+<h2 id="7、时钟配置"><a href="#7、时钟配置" class="headerlink" title="7、时钟配置"></a>7、时钟配置</h2><p>参考原理图，时钟选择的是外部高速时钟源12Mhz的</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/06/d89b24f147ac4d64f5dc97c1c1d76f7e.png" srcset="/img/loading.gif" lazyload alt="image-20260608225135957"></p>
 <p>但是如果直接这样配置会有问题</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/06/9a6069a621ea6856a43980abee2296a5.png" srcset="/img/loading.gif" lazyload alt="image-20260608225156958"></p>
 <p><strong>应该修改为：</strong></p>
 <p>根据 RA4M2 的数据手册和 FSP 规范，PLL 的输入时钟（即分频后的参考时钟）必须在 8 MHz 到 24 MHz 之间。这里如果2分频就是6mhz</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/06/78e4a76ee288f373a2f70c09089fcd96.png" srcset="/img/loading.gif" lazyload alt="image-20260608225224327"></p>
-<h2 id="7、串口配置"><a href="#7、串口配置" class="headerlink" title="7、串口配置"></a>7、串口配置</h2><p>下面配置一下串口，从原理图上来看，串口相关的接口是P110和P109，因此选择这两个引脚作为串口</p>
+<h2 id="8、串口配置"><a href="#8、串口配置" class="headerlink" title="8、串口配置"></a>8、串口配置</h2><p>下面配置一下串口，从原理图上来看，串口相关的接口是P110和P109，因此选择这两个引脚作为串口</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/443921b6828d1d75945c595623e469ad.png" srcset="/img/loading.gif" lazyload></p>
 <p>但是真的配置就会发现问题，默认没有修改的情况下，这两个接口被调试占用了，因为调试用的是jtag的接口，用的引脚比较多这里我们需要改成SWD的接口</p>
 <p><img src="https://typoralx2035.s3.bitiful.net/2026/05/12c3633ae19ebb7388b35780d1b17e32.png" srcset="/img/loading.gif" lazyload alt="image-20260524233456318"></p>
@@ -661,6 +661,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2026/06/27/esp-matter/" title="esp-matter">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">esp-matter</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
