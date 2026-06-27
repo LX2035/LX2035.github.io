@@ -19,24 +19,26 @@
   <meta name="author" content="LX2035">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1、esp-matter对应的关系 编译前置： 12source &#x2F;home&#x2F;lx&#x2F;my_work&#x2F;esp32&#x2F;esp-idf&#x2F;export.shsource &#x2F;home&#x2F;lx&#x2F;my_work&#x2F;esp32&#x2F;esp-matter&#x2F;export.sh  编译： 123456idf.py set-target esp32-c3idf.py set-target esp32-s2idf.py set-ta">
+    <meta name="description" content="1、python添加节点123456789101112import rclpyfrom rclpy.node import Nodedef main():    rclpy.init()    node &#x3D; Node(&#x27;python_node&#x27;)    node.get_logger().info(&#x27;你好 python 节点!&#x27;) # 打印    rclpy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="esp-matter">
-<meta property="og:url" content="https://lx2035.github.io/2026/06/27/esp-matter/index.html">
+<meta property="og:title" content="ros节点">
+<meta property="og:url" content="https://lx2035.github.io/2026/06/27/ros%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="LX2035 Blog">
-<meta property="og:description" content="1、esp-matter对应的关系 编译前置： 12source &#x2F;home&#x2F;lx&#x2F;my_work&#x2F;esp32&#x2F;esp-idf&#x2F;export.shsource &#x2F;home&#x2F;lx&#x2F;my_work&#x2F;esp32&#x2F;esp-matter&#x2F;export.sh  编译： 123456idf.py set-target esp32-c3idf.py set-target esp32-s2idf.py set-ta">
+<meta property="og:description" content="1、python添加节点123456789101112import rclpyfrom rclpy.node import Nodedef main():    rclpy.init()    node &#x3D; Node(&#x27;python_node&#x27;)    node.get_logger().info(&#x27;你好 python 节点!&#x27;) # 打印    rclpy">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2025/12/3a5e1f28cda96b12ad0adc96b94c4e79.png">
-<meta property="article:published_time" content="2026-06-27T12:31:46.000Z">
-<meta property="article:modified_time" content="2026-06-27T12:42:36.996Z">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2025/09/079c8e6f3cc9052eea2e3448c20175ed.png">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2025/09/4372711f3c4a9c6b7b0a730d16f82d43.png">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2025/09/05bdd2c8cef81c7f6e6f3400516626e2.png">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2025/09/11f2832acbc7f03a358faccb4cfd389b.png">
+<meta property="article:published_time" content="2026-06-27T12:48:20.000Z">
+<meta property="article:modified_time" content="2026-06-27T12:48:42.708Z">
 <meta property="article:author" content="LX2035">
-<meta property="article:tag" content="matter">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2025/12/3a5e1f28cda96b12ad0adc96b94c4e79.png">
+<meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2025/09/079c8e6f3cc9052eea2e3448c20175ed.png">
   
   
   
-  <title>esp-matter - LX2035 Blog</title>
+  <title>ros节点 - LX2035 Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -305,7 +307,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="esp-matter"></span>
+            <span id="subtitle" data-typed-text="ros节点"></span>
           
         </div>
 
@@ -316,7 +318,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-27 20:31" pubdate>
+        <time datetime="2026-06-27 20:48" pubdate>
           2026年6月27日 晚上
         </time>
       </span>
@@ -328,7 +330,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          443 字
+          1.9k 字
         
       </span>
     
@@ -339,7 +341,7 @@
         
         
         
-          4 分钟
+          16 分钟
         
       </span>
     
@@ -378,40 +380,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">esp-matter</h1>
+            <h1 id="seo-header">ros节点</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="1、esp-matter对应的关系"><a href="#1、esp-matter对应的关系" class="headerlink" title="1、esp-matter对应的关系"></a>1、esp-matter对应的关系</h2><p><img src="https://typoralx2035.s3.bitiful.net/2025/12/3a5e1f28cda96b12ad0adc96b94c4e79.png" srcset="/img/loading.gif" lazyload alt="image-20251222224657417"></p>
-<p>编译前置：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> <span class="hljs-regexp">/home/</span>lx<span class="hljs-regexp">/my_work/</span>esp32<span class="hljs-regexp">/esp-idf/</span>export.sh<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/home/</span>lx<span class="hljs-regexp">/my_work/</span>esp32<span class="hljs-regexp">/esp-matter/</span>export.sh<br></code></pre></td></tr></table></figure>
-
-<p>编译：</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">idf</span>.<span class="hljs-string">py</span> <span class="hljs-built_in">set-target</span> <span class="hljs-string">esp32-c3</span><br><span class="hljs-string">idf</span>.<span class="hljs-string">py</span> <span class="hljs-built_in">set-target</span> <span class="hljs-string">esp32-s2</span><br><br><span class="hljs-string">idf</span>.<span class="hljs-string">py</span> <span class="hljs-built_in">set-target</span> <span class="hljs-string">esp32</span><br><br><span class="hljs-string">idf</span>.<span class="hljs-string">py</span> <span class="hljs-string">build</span><br></code></pre></td></tr></table></figure>
-
-<p>烧录，先给USB提权</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chmod</span> 777 /dev/ttyUSB0<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chmod</span> 777 /dev/ttyACM0<br></code></pre></td></tr></table></figure>
-
-<p>擦除</p>
-<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">idf.py <span class="hljs-built_in">erase</span>-flash<br></code></pre></td></tr></table></figure>
-
-<p>烧录</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">idf.py flash <span class="hljs-literal">monitor</span><br></code></pre></td></tr></table></figure>
-
-<p>配网</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">matter</span> esp wifi connect lx2035_24 <span class="hljs-number">989821354</span><br><br><span class="hljs-attribute">matter</span> esp wifi connect lx2020 <span class="hljs-number">12345670</span><br><br><span class="hljs-attribute">matter</span> esp wifi connect <span class="hljs-number">803</span> L18898796627<br></code></pre></td></tr></table></figure>
-
-<p>配对默认的密码：</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-number">34970112332</span><br></code></pre></td></tr></table></figure>
+                <h2 id="1、python添加节点"><a href="#1、python添加节点" class="headerlink" title="1、python添加节点"></a>1、python添加节点</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs css">import rclpy<br><span class="hljs-selector-tag">from</span> rclpy<span class="hljs-selector-class">.node</span> import Node<br><br>def <span class="hljs-selector-tag">main</span>():<br>    rclpy.<span class="hljs-built_in">init</span>()<br>    node = <span class="hljs-built_in">Node</span>(<span class="hljs-string">&#x27;python_node&#x27;</span>)<br>    node.<span class="hljs-built_in">get_logger</span>().<span class="hljs-built_in">info</span>(<span class="hljs-string">&#x27;你好 python 节点!&#x27;</span>) # 打印<br>    rclpy.<span class="hljs-built_in">spin</span>(node)<br>    rclpy.<span class="hljs-built_in">shutdown</span>()<br><br>if __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-built_in">main</span>()<br></code></pre></td></tr></table></figure>
 
 
 
+<p><img src="https://typoralx2035.s3.bitiful.net/2025/09/079c8e6f3cc9052eea2e3448c20175ed.png" srcset="/img/loading.gif" lazyload alt="image-20250907170329279"></p>
+<h2 id="2、c-添加节点"><a href="#2、c-添加节点" class="headerlink" title="2、c++添加节点"></a>2、c++添加节点</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;rclcpp/rclcpp.hpp&quot;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> **argv)</span></span><br><span class="hljs-function"></span>&#123;<br>    rclcpp::<span class="hljs-built_in">init</span>(argc, argv);<br>    <span class="hljs-keyword">auto</span> node = std::<span class="hljs-built_in">make_shared</span>&lt;rclcpp::Node&gt;(<span class="hljs-string">&quot;cpp_node&quot;</span>);<br>    <span class="hljs-built_in">RCLCPP_INFO</span>(node-&gt;<span class="hljs-built_in">get_logger</span>(), <span class="hljs-string">&quot;Hello, World!&quot;</span>);<br>    rclcpp::<span class="hljs-built_in">spin</span>(node);<br>    rclcpp::<span class="hljs-built_in">shutdown</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p>cmakelist写法</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs awk">cmake_minimum_required(VERSION <span class="hljs-number">3.22</span>)<br><br>project(first_node)<br><br><span class="hljs-comment">#include_directories 添加特定的头文件搜索路径 ，相当于指定g++编译器的-I参数</span><br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rclcpp/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rcl/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rcutils/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rcl_yaml_param_parser/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rosidl_runtime_c/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rosidl_typesupport_interface/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rcpputils/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/builtin_interfaces/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rmw/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rosidl_runtime_cpp/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/tracetools/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/rcl_interfaces/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/libstatistics_collector/</span>)<br>include_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/i</span>nclude<span class="hljs-regexp">/statistics_msgs/</span>)<br><br><span class="hljs-comment"># link_directories - 向工程添加多个特定的库文件搜索路径，相当于指定g++编译器的-L参数</span><br>link_directories(<span class="hljs-regexp">/opt/</span>ros<span class="hljs-regexp">/humble/</span>lib/)<br><br><span class="hljs-comment"># add_executable - 生成first_node可执行文件</span><br>add_executable(first_node first_ros2_node.cpp)<br><br><span class="hljs-comment"># target_link_libraries - 为first_node(目标) 添加需要动态链接库，相同于指定g++编译器-l参数</span><br><span class="hljs-comment"># 下面的语句代替 -lrclcpp -lrcutils</span><br>target_link_libraries(first_node rclcpp rcutils)<br><br></code></pre></td></tr></table></figure>
 
-
-
-
+<p>如果出现路径找不到的问题，先ctrl+p配置一下c++的配置</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2025/09/4372711f3c4a9c6b7b0a730d16f82d43.png" srcset="/img/loading.gif" lazyload alt="image-20250914171009865"></p>
+<p>在这里加入下面的内容：（根据实际情况来）</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2025/09/05bdd2c8cef81c7f6e6f3400516626e2.png" srcset="/img/loading.gif" lazyload alt="image-20250914170944376"></p>
+<p>最后运行如下：</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2025/09/11f2832acbc7f03a358faccb4cfd389b.png" srcset="/img/loading.gif" lazyload alt="image-20250914170816286"></p>
+<h2 id="3、python编写功能包"><a href="#3、python编写功能包" class="headerlink" title="3、python编写功能包"></a>3、python编写功能包</h2><h2 id="4、c-编写功能包"><a href="#4、c-编写功能包" class="headerlink" title="4、c++编写功能包"></a>4、c++编写功能包</h2>
                 
               </div>
             
@@ -419,34 +409,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/matter/" class="category-chain-item">matter</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/matter/" class="print-no-link">#matter</a>
-      
-    </div>
   
 </div>
 
@@ -456,8 +418,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>esp-matter</div>
-      <div>https://lx2035.github.io/2026/06/27/esp-matter/</div>
+      <div>ros节点</div>
+      <div>https://lx2035.github.io/2026/06/27/ros节点/</div>
     </div>
     <div class="license-meta">
       
@@ -501,18 +463,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/06/27/k230%E8%AF%95%E7%94%A8/" title="k230试用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">k230试用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/27/RA4M2-SENSOR%E8%AF%95%E7%94%A8/" title="RA4M2-SENSOR试用">
-                        <span class="hidden-mobile">RA4M2-SENSOR试用</span>
+                      <a href="/2026/06/27/ros%E5%AE%89%E8%A3%85/" title="ros安装">
+                        <span class="hidden-mobile">ros安装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
