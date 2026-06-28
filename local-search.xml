@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>rt_thread</title>
+    <link href="/2026/06/28/rt-thread/"/>
+    <url>/2026/06/28/rt-thread/</url>
+    
+    <content type="html"><![CDATA[<p> 有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录</p><h2 id="1、软件安装"><a href="#1、软件安装" class="headerlink" title="1、软件安装"></a>1、软件安装</h2><p>下载的网址：</p><p><a href="https://www.rt-thread.org/download.html#download-rt-thread-studio">rt-thread.org&#x2F;download.html#download-rt-thread-studio</a></p><p>安装：</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png" alt="image-20260628195306140"></p><p>打开页面，准备新建一个nano项目</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/c53ea7b97989c2ba94ed8b0806fec1a5.png" alt="image-20260629000555243"></p><p>直接创建工程</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/c67cd73ee4ec67b1e02ad5fc7c45d1d1.png" alt="image-20260629000819847"></p><p>之后进入debug，可以看到如下输出</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/a9ad48e232aa65806c499348320b56b0.png" alt="image-20260629000803997"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>stm32cubeide-2.11</title>
     <link href="/2026/06/28/stm32cubeide-2-11/"/>
     <url>/2026/06/28/stm32cubeide-2-11/</url>

@@ -19,44 +19,26 @@
   <meta name="author" content="LX2035">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最近摸一下很久没玩过的cubeide，下载了一个最新版的是2.11，发现现在ide里面不内置cudemx了，发现原来是现在2.x的都不支持了，原文如下 [STM32CubeIDE 2.0.0 is out: interoperability instead of integration New Update] - EdgeBench 而且还有个bug： 就是先用cubemx生成代码之后，这样导入">
+    <meta name="description" content="有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录 1、软件安装下载的网址： rt-thread.org&#x2F;download.html#download-rt-thread-studio 安装：  打开页面，准备新建一个nano项目  直接创建工程  之后进入debug，可以看到如下输出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="stm32cubeide-2.11">
-<meta property="og:url" content="https://lx2035.github.io/2026/06/28/stm32cubeide-2-11/index.html">
+<meta property="og:title" content="rt_thread">
+<meta property="og:url" content="https://lx2035.github.io/2026/06/28/rt-thread/index.html">
 <meta property="og:site_name" content="LX2035 Blog">
-<meta property="og:description" content="最近摸一下很久没玩过的cubeide，下载了一个最新版的是2.11，发现现在ide里面不内置cudemx了，发现原来是现在2.x的都不支持了，原文如下 [STM32CubeIDE 2.0.0 is out: interoperability instead of integration New Update] - EdgeBench 而且还有个bug： 就是先用cubemx生成代码之后，这样导入">
+<meta property="og:description" content="有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录 1、软件安装下载的网址： rt-thread.org&#x2F;download.html#download-rt-thread-studio 安装：  打开页面，准备新建一个nano项目  直接创建工程  之后进入debug，可以看到如下输出">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/35697f367b9ad612688d55ec52dc3b07.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/d60901443b4871b7475abd0507cdcddc.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/7a17a0b9efd91bb4621b16cbba9adb2b.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/74480714259419701892976278135362.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/bb77b42a8b256aff139ba00378897b88.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/d79068d0165d0217504e6267769d36b3.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/bbdc2a7046c1bc1c2509ecfdeb1b4502.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/ef4b595e9f0b66cfba69ffd62db83e48.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/f3b7dfdf88d79fba649e4d90c6edef5b.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/6a55f5ae2df6282a87ac49d5bc085f99.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/268793b8f23a04204a62b34e2ab2d7ea.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/f302ef4f884cdab18875fbcf261d96da.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/528ae7631905ec631ffcbbe2523fa456.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/b5c2fecec9cd0cf05e6894be9046652a.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/0e4647b2c51333ea2549fed5bf3dcb0c.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/6682bd72c72f80686267a2761bccb630.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/323f7f44be5a8a7097361b91a15b332f.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/f7d9b1af68390aac335e31064a0e7de1.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/1c5b6b33ff9deeec7b5b21e4d1268e19.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/2d21bc8d3a610f186f3b85efcb749d59.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/732d3f8e4cfe0c34a72a5320c2c44eff.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/34c44a598036e586803ca13cc8952f53.png">
-<meta property="article:published_time" content="2026-06-28T04:26:07.000Z">
-<meta property="article:modified_time" content="2026-06-28T11:43:04.164Z">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/c53ea7b97989c2ba94ed8b0806fec1a5.png">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/c67cd73ee4ec67b1e02ad5fc7c45d1d1.png">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/a9ad48e232aa65806c499348320b56b0.png">
+<meta property="article:published_time" content="2026-06-28T11:48:29.000Z">
+<meta property="article:modified_time" content="2026-06-28T16:08:43.392Z">
 <meta property="article:author" content="LX2035">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2026/06/35697f367b9ad612688d55ec52dc3b07.png">
+<meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png">
   
   
   
-  <title>stm32cubeide-2.11 - LX2035 Blog</title>
+  <title>rt_thread - LX2035 Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -325,7 +307,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="stm32cubeide-2.11"></span>
+            <span id="subtitle" data-typed-text="rt_thread"></span>
           
         </div>
 
@@ -336,8 +318,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-28 12:26" pubdate>
-          2026年6月28日 中午
+        <time datetime="2026-06-28 19:48" pubdate>
+          2026年6月28日 晚上
         </time>
       </span>
     
@@ -348,7 +330,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          152 字
         
       </span>
     
@@ -359,7 +341,7 @@
         
         
         
-          11 分钟
+          2 分钟
         
       </span>
     
@@ -398,67 +380,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">stm32cubeide-2.11</h1>
+            <h1 id="seo-header">rt_thread</h1>
             
             
               <div class="markdown-body">
                 
-                <p> 最近摸一下很久没玩过的cubeide，下载了一个最新版的是2.11，发现现在ide里面不内置cudemx了，发现原来是现在2.x的都不支持了，原文如下</p>
-<p>[STM32CubeIDE 2.0.0 is out: interoperability instead of integration <a target="_blank" rel="noopener" href="https://www.answeroverflow.com/m/1443144068568973466">New Update] - EdgeBench</a></p>
-<p>而且还有个bug：</p>
-<p>就是先用cubemx生成代码之后，这样导入是不行的：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/35697f367b9ad612688d55ec52dc3b07.png" srcset="/img/loading.gif" lazyload alt="image-20260628122915608"></p>
-<p>得这样导入才行：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/d60901443b4871b7475abd0507cdcddc.png" srcset="/img/loading.gif" lazyload alt="image-20260628122941764"></p>
-<p>这里我已经成功导入了，会有这个报错请直接忽略</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/7a17a0b9efd91bb4621b16cbba9adb2b.png" srcset="/img/loading.gif" lazyload alt="image-20260628123015510"></p>
-<p>另外发现官网有了一个vscode的选项，因此也研究了一下子：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/74480714259419701892976278135362.png" srcset="/img/loading.gif" lazyload alt="image-20260628123313873"></p>
-<p>直接用cudeide的话，代码提示实在是不方便，如果能用vscode的话会方便很多，下面是一些记录的过程</p>
-<h2 id="1、新增配置文件"><a href="#1、新增配置文件" class="headerlink" title="1、新增配置文件"></a>1、新增配置文件</h2><p>vscode的作用有很多，不支持开发stm32，其他很多功能，这样就会安装一大堆插件，开发其他功能的时候可能会互相干扰，这个时候可以专门做一个配置文件</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/bb77b42a8b256aff139ba00378897b88.png" srcset="/img/loading.gif" lazyload alt="image-20260628124111519"></p>
-<p>我这里已经新建好了，也可以选择默认配置新增配置文件，如下所示</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/d79068d0165d0217504e6267769d36b3.png" srcset="/img/loading.gif" lazyload alt="image-20260628124252250"></p>
-<p>这个时候其他插件就没有了，就可以开始安装开发stm32需要的插件了，相当于是一个新的vscode，这里直接安装这个插件，会有一大堆扩展包会需要一起安装</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/bbdc2a7046c1bc1c2509ecfdeb1b4502.png" srcset="/img/loading.gif" lazyload alt="image-20260628124415311"></p>
-<p>到这里，vscode的部分就基本结束了</p>
-<h2 id="2、cubemx配置"><a href="#2、cubemx配置" class="headerlink" title="2、cubemx配置"></a>2、cubemx配置</h2><p>这里需要注意要使用比较新的cubemx</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/ef4b595e9f0b66cfba69ffd62db83e48.png" srcset="/img/loading.gif" lazyload alt="image-20260628125925173"></p>
-<p>其他配置差不多，这里注意选择cmake</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/f3b7dfdf88d79fba649e4d90c6edef5b.png" srcset="/img/loading.gif" lazyload alt="image-20260628125915336"></p>
-<h2 id="3、vscode配置"><a href="#3、vscode配置" class="headerlink" title="3、vscode配置"></a>3、vscode配置</h2><p>之后使用vscode打开，但是我发现这个页面没什么作用，都是一些配置页面，比如开启一些配置什么的</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/6a55f5ae2df6282a87ac49d5bc085f99.png" srcset="/img/loading.gif" lazyload alt="image-20260628130512436"></p>
-<p>可能也就是这个有点用</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/268793b8f23a04204a62b34e2ab2d7ea.png" srcset="/img/loading.gif" lazyload alt="image-20260628163837687"></p>
-<p>关键配置在这里，也就是这个cmake插件</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/f302ef4f884cdab18875fbcf261d96da.png" srcset="/img/loading.gif" lazyload alt="image-20260628161510171"></p>
-<p>也可以点击这里编译：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/528ae7631905ec631ffcbbe2523fa456.png" srcset="/img/loading.gif" lazyload alt="image-20260628163707703"></p>
-<p>如果要调试的话，需要走到这里</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/b5c2fecec9cd0cf05e6894be9046652a.png" srcset="/img/loading.gif" lazyload alt="image-20260628163657194"></p>
-<p>另外如果要调试的话最好把这哭改成debug：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/0e4647b2c51333ea2549fed5bf3dcb0c.png" srcset="/img/loading.gif" lazyload alt="image-20260628164015249"></p>
-<p>点击进入调试页面</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/6682bd72c72f80686267a2761bccb630.png" srcset="/img/loading.gif" lazyload alt="image-20260628163622581"></p>
-<p>这里可以添加变量什么的</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/323f7f44be5a8a7097361b91a15b332f.png" srcset="/img/loading.gif" lazyload alt="image-20260628163642355"></p>
-<p>但是目前还没看到直接下载的页面在哪里，到时候再看吧</p>
-<h2 id="4、文件配置"><a href="#4、文件配置" class="headerlink" title="4、文件配置"></a>4、文件配置</h2><p>经常我们会需要在代码里面加一些自己的文件，例如bsp和app，这个系统是基于cmake的，需要改cmake，例如我在这里加了test.c和test.h</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/f7d9b1af68390aac335e31064a0e7de1.png" srcset="/img/loading.gif" lazyload alt="image-20260628164528166"></p>
-<p>不过看这里居然有代码提示了</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/1c5b6b33ff9deeec7b5b21e4d1268e19.png" srcset="/img/loading.gif" lazyload alt="image-20260628164623797"></p>
-<p>试了一下，好像只改了这么一点啊</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/2d21bc8d3a610f186f3b85efcb749d59.png" srcset="/img/loading.gif" lazyload alt="image-20260628164703354"></p>
-<p>还是得我来改，在这里创建文件夹</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/732d3f8e4cfe0c34a72a5320c2c44eff.png" srcset="/img/loading.gif" lazyload alt="image-20260628194143241"></p>
-<p>创建一个针对新增文件的cmake</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-keyword">set</span>(USER_Include_Dirs<br>    <span class="hljs-variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/../../bsp/<br>)<br><br><span class="hljs-keyword">set</span>(USER_Application_Src<br>    <span class="hljs-variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/../../bsp/<span class="hljs-keyword">test</span>.c<br>)<br><br><span class="hljs-keyword">target_include_directories</span>(stm32cubemx INTERFACE <span class="hljs-variable">$&#123;USER_Include_Dirs&#125;</span>)<br><span class="hljs-keyword">target_sources</span>(<span class="hljs-variable">$&#123;CMAKE_PROJECT_NAME&#125;</span> PRIVATE <span class="hljs-variable">$&#123;USER_Application_Src&#125;</span>)<br></code></pre></td></tr></table></figure>
-
-<p>之后在大的cmake下面补充这些</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/34c44a598036e586803ca13cc8952f53.png" srcset="/img/loading.gif" lazyload alt="image-20260628194239719"></p>
-<p>再编译就OK了</p>
-<p>【参考】</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wgwyanfs/p/19697839">告别Keil！手把手教你用VSCode搭建高效STM32开发环境 - wgwyanfs - 博客园</a></p>
+                <p> 有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录</p>
+<h2 id="1、软件安装"><a href="#1、软件安装" class="headerlink" title="1、软件安装"></a>1、软件安装</h2><p>下载的网址：</p>
+<p><a target="_blank" rel="noopener" href="https://www.rt-thread.org/download.html#download-rt-thread-studio">rt-thread.org&#x2F;download.html#download-rt-thread-studio</a></p>
+<p>安装：</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png" srcset="/img/loading.gif" lazyload alt="image-20260628195306140"></p>
+<p>打开页面，准备新建一个nano项目</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/c53ea7b97989c2ba94ed8b0806fec1a5.png" srcset="/img/loading.gif" lazyload alt="image-20260629000555243"></p>
+<p>直接创建工程</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/c67cd73ee4ec67b1e02ad5fc7c45d1d1.png" srcset="/img/loading.gif" lazyload alt="image-20260629000819847"></p>
+<p>之后进入debug，可以看到如下输出</p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/a9ad48e232aa65806c499348320b56b0.png" srcset="/img/loading.gif" lazyload alt="image-20260629000803997"></p>
 
                 
               </div>
@@ -476,8 +413,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>stm32cubeide-2.11</div>
-      <div>https://lx2035.github.io/2026/06/28/stm32cubeide-2-11/</div>
+      <div>rt_thread</div>
+      <div>https://lx2035.github.io/2026/06/28/rt-thread/</div>
     </div>
     <div class="license-meta">
       
@@ -521,18 +458,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/06/28/rt-thread/" title="rt_thread">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">rt_thread</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/27/ros%E8%8A%82%E7%82%B9/" title="ros节点">
-                        <span class="hidden-mobile">ros节点</span>
+                      <a href="/2026/06/28/stm32cubeide-2-11/" title="stm32cubeide-2.11">
+                        <span class="hidden-mobile">stm32cubeide-2.11</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
