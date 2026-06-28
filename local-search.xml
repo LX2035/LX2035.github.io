@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>stm32cubeide-2.11</title>
+    <link href="/2026/06/28/stm32cubeide-2-11/"/>
+    <url>/2026/06/28/stm32cubeide-2-11/</url>
+    
+    <content type="html"><![CDATA[<p> 最近摸一下很久没玩过的cubeide，下载了一个最新版的是2.11，发现现在ide里面不内置cudemx了，发现原来是现在2.x的都不支持了，原文如下</p><p>[STM32CubeIDE 2.0.0 is out: interoperability instead of integration <a href="https://www.answeroverflow.com/m/1443144068568973466">New Update] - EdgeBench</a></p><p>而且还有个bug：</p><p>就是先用cubemx生成代码之后，这样导入是不行的：</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/35697f367b9ad612688d55ec52dc3b07.png" alt="image-20260628122915608"></p><p>得这样导入才行：</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/d60901443b4871b7475abd0507cdcddc.png" alt="image-20260628122941764"></p><p>这里我已经成功导入了，会有这个报错请直接忽略</p><p><img src="https://typoralx2035.s3.bitiful.net/2026/06/7a17a0b9efd91bb4621b16cbba9adb2b.png" alt="image-20260628123015510"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ros节点</title>
     <link href="/2026/06/27/ros%E8%8A%82%E7%82%B9/"/>
     <url>/2026/06/27/ros%E8%8A%82%E7%82%B9/</url>
