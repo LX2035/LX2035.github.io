@@ -19,44 +19,24 @@
   <meta name="author" content="LX2035">
   <meta name="keywords" content="">
   
-    <meta name="description" content="有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录 1、软件安装下载的网址： rt-thread.org&#x2F;download.html#download-rt-thread-studio 安装：  打开页面，准备新建一个nano项目  直接创建工程，这里创建的是nano版的工程  之后进入debug，可以看到如下输出  也可以debug  打开串口终端  设置参">
+    <meta name="description" content="1、基础文档1. Matter-1.5-Core-Specification.pdf 核心内容： 交互模型 (Interaction Model)、核心数据模型和通信机制。 Matter 的语言和语法： 定义了 Endpoint、Cluster、Attribute 和 Command 的数据结构、编码规则和寻址方式。 交互模型： 详细描述了控制器和设备之间如何发送和接收消息（Read Attrib">
 <meta property="og:type" content="article">
-<meta property="og:title" content="rt_thread">
-<meta property="og:url" content="https://lx2035.github.io/2026/06/28/rt-thread/index.html">
+<meta property="og:title" content="matter说明">
+<meta property="og:url" content="https://lx2035.github.io/2026/06/27/matter%E8%AF%B4%E6%98%8E/index.html">
 <meta property="og:site_name" content="LX2035 Blog">
-<meta property="og:description" content="有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录 1、软件安装下载的网址： rt-thread.org&#x2F;download.html#download-rt-thread-studio 安装：  打开页面，准备新建一个nano项目  直接创建工程，这里创建的是nano版的工程  之后进入debug，可以看到如下输出  也可以debug  打开串口终端  设置参">
+<meta property="og:description" content="1、基础文档1. Matter-1.5-Core-Specification.pdf 核心内容： 交互模型 (Interaction Model)、核心数据模型和通信机制。 Matter 的语言和语法： 定义了 Endpoint、Cluster、Attribute 和 Command 的数据结构、编码规则和寻址方式。 交互模型： 详细描述了控制器和设备之间如何发送和接收消息（Read Attrib">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/c53ea7b97989c2ba94ed8b0806fec1a5.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/c67cd73ee4ec67b1e02ad5fc7c45d1d1.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/a9ad48e232aa65806c499348320b56b0.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/1470f9b0f8851c323c12f57291f9fd7c.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/ac875bc7086433fa5bdbb61f661082f6.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/e8b092787db1907ffa6a2e01e9804b01.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/ee232a6c83e16a67be06c04bc31bdf5e.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/337859f0f27edcedf602054bdb65b62f.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/56b9feaca120c7df5ad99593cd06c787.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/2aff3b9ac043e6b3a405065dd88917d3.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/fe534426043d1a74a8faf9291af96578.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/680898bfbb73b6088528874f2d7515fb.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/3edc61d7fe113f389638752865995d94.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/72b734bd338e6c73e1164a64c8eb22d0.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/81b7f02472d2b30cc05e09455cf24a21.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/48140d5442dd1959929c2da8dfb1d8c6.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/e38df6c16784e0f49d7b97e63973cc25.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/184a3ce069ab0f4455f0a0f1a4872627.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/bdc861e5361c638fb5abcbd59dd6f9a7.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/19670889e47f8656094089e1a2c33b3c.png">
-<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2026/06/adc2931d6baff14e87fe17ef597a596c.png">
-<meta property="article:published_time" content="2026-06-28T11:48:29.000Z">
-<meta property="article:modified_time" content="2026-06-30T14:57:54.398Z">
+<meta property="og:image" content="https://typoralx2035.s3.bitiful.net/2025/12/4d46753b0d773ce5fefabb8b296911d1.png">
+<meta property="article:published_time" content="2026-06-27T08:41:43.000Z">
+<meta property="article:modified_time" content="2026-06-27T12:39:57.268Z">
 <meta property="article:author" content="LX2035">
+<meta property="article:tag" content="matter">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png">
+<meta name="twitter:image" content="https://typoralx2035.s3.bitiful.net/2025/12/4d46753b0d773ce5fefabb8b296911d1.png">
   
   
   
-  <title>rt_thread - LX2035 Blog</title>
+  <title>matter说明 - LX2035 Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -325,7 +305,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="rt_thread"></span>
+            <span id="subtitle" data-typed-text="matter说明"></span>
           
         </div>
 
@@ -336,8 +316,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-28 19:48" pubdate>
-          2026年6月28日 晚上
+        <time datetime="2026-06-27 16:41" pubdate>
+          2026年6月27日 下午
         </time>
       </span>
     
@@ -348,7 +328,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          2.3k 字
         
       </span>
     
@@ -359,7 +339,7 @@
         
         
         
-          15 分钟
+          20 分钟
         
       </span>
     
@@ -398,70 +378,85 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">rt_thread</h1>
+            <h1 id="seo-header">matter说明</h1>
             
             
               <div class="markdown-body">
                 
-                <p> 有个朋友的工作内容正好是rt_thread，因此也像研究一下，这里做一个记录</p>
-<h2 id="1、软件安装"><a href="#1、软件安装" class="headerlink" title="1、软件安装"></a>1、软件安装</h2><p>下载的网址：</p>
-<p><a target="_blank" rel="noopener" href="https://www.rt-thread.org/download.html#download-rt-thread-studio">rt-thread.org&#x2F;download.html#download-rt-thread-studio</a></p>
-<p>安装：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/6a1cacc515bd0c5744b297b25af5dc53.png" srcset="/img/loading.gif" lazyload alt="image-20260628195306140"></p>
-<p>打开页面，准备新建一个nano项目</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/c53ea7b97989c2ba94ed8b0806fec1a5.png" srcset="/img/loading.gif" lazyload alt="image-20260629000555243"></p>
-<p>直接创建工程，这里创建的是nano版的工程</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/c67cd73ee4ec67b1e02ad5fc7c45d1d1.png" srcset="/img/loading.gif" lazyload alt="image-20260629000819847"></p>
-<p>之后进入debug，可以看到如下输出</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/a9ad48e232aa65806c499348320b56b0.png" srcset="/img/loading.gif" lazyload alt="image-20260629000803997"></p>
-<p>也可以debug</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/1470f9b0f8851c323c12f57291f9fd7c.png" srcset="/img/loading.gif" lazyload alt="image-20260629231714158"></p>
-<p>打开串口终端</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/ac875bc7086433fa5bdbb61f661082f6.png" srcset="/img/loading.gif" lazyload alt="image-20260630224701829"></p>
-<p>设置参数就可以进入了</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/e8b092787db1907ffa6a2e01e9804b01.png" srcset="/img/loading.gif" lazyload alt="image-20260630224716214"></p>
-<p>可以省一个串口助手</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/ee232a6c83e16a67be06c04bc31bdf5e.png" srcset="/img/loading.gif" lazyload alt="image-20260630224739860"></p>
-<p>串口部分的代码已经写好了，在这里</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/337859f0f27edcedf602054bdb65b62f.png" srcset="/img/loading.gif" lazyload alt="image-20260630224807325"></p>
-<h2 id="2、修改工程"><a href="#2、修改工程" class="headerlink" title="2、修改工程"></a>2、修改工程</h2><p>新增文件夹和头文件</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/56b9feaca120c7df5ad99593cd06c787.png" srcset="/img/loading.gif" lazyload alt="image-20260630221851411"></p>
-<p>添加文件夹到文件系统</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/2aff3b9ac043e6b3a405065dd88917d3.png" srcset="/img/loading.gif" lazyload alt="image-20260630221922548"></p>
-<p>这里添加路径</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/fe534426043d1a74a8faf9291af96578.png" srcset="/img/loading.gif" lazyload alt="image-20260630222007041"></p>
-<p>比如我这里添加了对应的bsp函数</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs livescript"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * Copyright (c) 2006-2021, RT-Thread Development Team</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * SPDX-License-Identifier: Apache-2.0</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * Change Logs:</span><br><span class="hljs-comment"> * Date           Author       Notes</span><br><span class="hljs-comment"> * 2026-06-29     lx       the first version</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-comment">#include &quot;led.h&quot;</span><br><br><span class="hljs-literal">void</span> led_init(<span class="hljs-literal">void</span>) &#123;<br>  <span class="hljs-comment">/* 使能 GPIOC 时钟：直接操作 RCC 寄存器 */</span><br>  RCC-&gt;APB2ENR |= RCC_APB2ENR_IOPCEN;<br>  (<span class="hljs-literal">void</span>)RCC-&gt;APB2ENR; <span class="hljs-comment">/* 延迟确保时钟稳定 */</span><br><br>  <span class="hljs-comment">/* 配置 PC13 为推挽输出：直接操作 GPIO 寄存器 */</span><br>  GPIOC-&gt;CRH &amp;= ~(<span class="hljs-number">0xF</span> &lt;&lt; <span class="hljs-number">20</span>);       <span class="hljs-comment">/* 清除 CNF13[1:0], MODE13[1:0] */</span><br>  GPIOC-&gt;CRH |= (<span class="hljs-number">0x01</span> &lt;&lt; <span class="hljs-number">20</span>);       <span class="hljs-comment">/* MODE13 = 01 (输出10MHz) */</span><br>  GPIOC-&gt;CRH |= (<span class="hljs-number">0x00</span> &lt;&lt; <span class="hljs-number">22</span>);       <span class="hljs-comment">/* CNF13 = 00 (推挽输出) */</span><br>  <br>  <span class="hljs-comment">/* 初始状态：关闭 LED（高电平） */</span><br>  GPIOC-&gt;ODR |= GPIO_PIN_13;<br>&#125;<br><br><span class="hljs-literal">void</span> led_toggle(<span class="hljs-literal">void</span>) &#123;<br>  GPIOC-&gt;ODR ^= GPIO_PIN_13;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-
-<p>对应的头文件</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * Copyright (c) 2006-2021, RT-Thread Development Team</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * SPDX-License-Identifier: Apache-2.0</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * Change Logs:</span><br><span class="hljs-comment"> * Date           Author       Notes</span><br><span class="hljs-comment"> * 2026-06-29     lx       the first version</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> BSP_LED_H_</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> BSP_LED_H_</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;stm32f1xx_hal.h&quot;</span></span><br><br><span class="hljs-comment">/* PC13 为板载 LED，低电平点亮 */</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LED_PIN                GPIO_PIN_13</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LED_GPIO_PORT          GPIOC</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">led_init</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span>;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">led_toggle</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span></span>;<br><br><span class="hljs-meta">#<span class="hljs-keyword">endif</span> <span class="hljs-comment">/* BSP_LED_H_ */</span></span><br><br></code></pre></td></tr></table></figure>
-
-<p>之后就可以在主程序中调用了：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/680898bfbb73b6088528874f2d7515fb.png" srcset="/img/loading.gif" lazyload alt="image-20260630222133863"></p>
-<p>但是这里有个bug，我目前也不太清楚，之前我用nano版本下载的时候这个代码不会这样，而是会有一个段错误，排查了好久没排查到，然后我又新建了一个不是nano的工程，发现是正常的。不过如果使用debug下载则不会有这个问题。但是最离奇的是这个问题今天自己修复了。。。。</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/3edc61d7fe113f389638752865995d94.png" srcset="/img/loading.gif" lazyload alt="image-20260630223513384"></p>
-<p>另外，这个软件的包管理器在这里：</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/72b734bd338e6c73e1164a64c8eb22d0.png" srcset="/img/loading.gif" lazyload alt="image-20260630223658925"></p>
-<p>对应包的安装情况</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/81b7f02472d2b30cc05e09455cf24a21.png" srcset="/img/loading.gif" lazyload alt="image-20260630223709374"></p>
-<p>也可以下载开发板，这里开始是开发板</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/48140d5442dd1959929c2da8dfb1d8c6.png" srcset="/img/loading.gif" lazyload alt="image-20260630223749973"></p>
-<p>然后每个新建工程都会有这个提示</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/e38df6c16784e0f49d7b97e63973cc25.png" srcset="/img/loading.gif" lazyload alt="image-20260630223824993"></p>
-<p>所以他是没有时钟配置的，时钟配置在这里修改</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/184a3ce069ab0f4455f0a0f1a4872627.png" srcset="/img/loading.gif" lazyload alt="image-20260630224014450"></p>
-<p>对应如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> BSP_CLOCK_SOURCE                  (<span class="hljs-string">&quot;HSE&quot;</span>)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> BSP_CLOCK_SOURCE_FREQ_MHZ         ((int32_t)8)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> BSP_CLOCK_SYSTEM_FREQ_MHZ         ((int32_t)72)</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="3、shell终端"><a href="#3、shell终端" class="headerlink" title="3、shell终端"></a>3、shell终端</h2><p>可以点击这个进入终端</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/bdc861e5361c638fb5abcbd59dd6f9a7.png" srcset="/img/loading.gif" lazyload alt="image-20260630224545340"></p>
-<p>不用改动，默认即可</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/19670889e47f8656094089e1a2c33b3c.png" srcset="/img/loading.gif" lazyload alt="image-20260630224606831"></p>
-<p>下载可以进入命令行，在串口里面输入</p>
-<p><img src="https://typoralx2035.s3.bitiful.net/2026/06/adc2931d6baff14e87fe17ef597a596c.png" srcset="/img/loading.gif" lazyload alt="image-20260630224520812"></p>
-<h2 id="4、"><a href="#4、" class="headerlink" title="4、"></a>4、</h2><p>【参考】</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42640280/article/details/127908226">RT-Thread studio使用（汇总）-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lin280340404/article/details/159886072?ops_request_misc=elastic_search_misc&request_id=b2a2e7bff50886eb188abdbc8c5152ec&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~ElasticSearch~search_v2-1-159886072-null-null.nonecase&utm_term=rt&spm=1018.2226.3001.4450">【RT-Thread系统-01】RT-Thread 概述与开发环境搭建（超详细实操版）-CSDN博客</a></p>
+                <h2 id="1、基础文档"><a href="#1、基础文档" class="headerlink" title="1、基础文档"></a>1、基础文档</h2><h3 id="1-Matter-1-5-Core-Specification-pdf"><a href="#1-Matter-1-5-Core-Specification-pdf" class="headerlink" title="1. Matter-1.5-Core-Specification.pdf"></a>1. Matter-1.5-Core-Specification.pdf</h3><ul>
+<li><strong>核心内容：</strong> <strong>交互模型 (Interaction Model)、核心数据模型和通信机制</strong>。<ul>
+<li><strong>Matter 的语言和语法：</strong> 定义了 Endpoint、Cluster、Attribute 和 Command 的数据结构、编码规则和寻址方式。</li>
+<li><strong>交互模型：</strong> 详细描述了控制器和设备之间如何发送和接收消息（Read Attribute, Write Attribute, Invoke Command, Subscribe to Event）的流程。</li>
+<li><strong>安全和网络基础（部分）：</strong> 包含安全会话建立、PASE&#x2F;CASE 过程以及对底层网络传输的抽象定义。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Matter-1-5-Application-Cluster-Specification-pdf"><a href="#2-Matter-1-5-Application-Cluster-Specification-pdf" class="headerlink" title="2. Matter-1.5-Application-Cluster-Specification.pdf"></a>2. Matter-1.5-Application-Cluster-Specification.pdf</h3><p><strong>核心内容：</strong> <strong>所有标准 Cluster (簇) 的功能定义</strong>。</p>
+<ul>
+<li><strong>功能蓝图：</strong> 详述了每个标准 Cluster（例如 On&#x2F;Off、Level Control、Door Lock、Temperature Measurement 等）必须包含的属性、命令、事件及其确切的行为和数据类型。</li>
+<li><strong>设备间的互操作性：</strong> 确保所有厂商的设备实现同一 Cluster 时，其功能行为是一致的。</li>
+<li><strong>这是开发者在实现具体功能逻辑时查阅最多的文档。</strong></li>
+</ul>
+<h3 id="3-Matter-1-5-Device-Library-Specification-pdf"><a href="#3-Matter-1-5-Device-Library-Specification-pdf" class="headerlink" title="3. Matter-1.5-Device-Library-Specification.pdf"></a>3. Matter-1.5-Device-Library-Specification.pdf</h3><ul>
+<li><strong>核心内容：</strong> <strong>如何将 Cluster 组合成具体的设备类型</strong>。<ul>
+<li><strong>设备类型定义：</strong> 定义了 Matter 支持的所有标准设备类型（如 On&#x2F;Off Light, Dimmable Light, Color Temperature Light, Thermostat, Contact Sensor 等）。</li>
+<li><strong>强制和可选 Cluster：</strong> 规定了每种设备类型在其各个 Endpoint 上<strong>必须 (Mandatory)</strong> 支持哪些 Cluster，以及可以<strong>可选 (Optional)</strong> 支持哪些 Cluster。</li>
+<li><strong>例子：</strong> “Dimmable Light”设备类型必须在 Endpoint 1 上实现 On&#x2F;Off Cluster 和 Level Control Cluster。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Matter-1-5-Standard-Namespaces-pdf"><a href="#4-Matter-1-5-Standard-Namespaces-pdf" class="headerlink" title="4. Matter-1.5-Standard-Namespaces.pdf"></a>4. Matter-1.5-Standard-Namespaces.pdf</h3><ul>
+<li><strong>核心内容：</strong> <strong>统一的命名空间、ID 列表和数据类型</strong>。<ul>
+<li><strong>ID 注册表：</strong> 提供了所有核心 ID 的列表和范围，例如 Vendor ID (VID)、Product ID (PID) 的分配范围、Cluster ID、Attribute ID、Command ID 等。</li>
+<li><strong>数据类型定义：</strong> 规范了 Matter 使用的所有标准数据类型（如 $INT8$, $UINT16$, $ENUM$, $Struct$ 等）。</li>
+<li><strong>枚举和常量：</strong> 定义了协议中使用的各种枚举值和常量，确保通信中的一致性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2、matter数据模型"><a href="#2、matter数据模型" class="headerlink" title="2、matter数据模型"></a>2、matter数据模型</h2><p>此处参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/iini/p/18009504">Matter开发，看这一篇就够了 - iini - 博客园</a></p>
+<p><img src="https://typoralx2035.s3.bitiful.net/2025/12/4d46753b0d773ce5fefabb8b296911d1.png" srcset="/img/loading.gif" lazyload alt="image-20251214142413429"></p>
+<p><strong>Node</strong></p>
+<p>节点(Node)是一个逻辑上独立的设备，有自己唯一的网络地址。每个Matter设备由一个或多个Node组成。</p>
+<p>例如 <code>chip-lighting-app</code> 运行的整个软件实例就是一个 Node，但是一个设备可以运行多个这样的软件实例。</p>
+<p><strong>Endpoint</strong></p>
+<p>一个Node包含多个Endpoint，每个endpoint是一个逻辑上独立的功能模块。比如门锁，它除了可以包含门锁这个endpoint外，它还可以包含温度传感器这个endpoint。</p>
+<p><strong>注意：endpoint 0预留为Matter的utility cluster，而且每个Matter设备都必须强制包含它。</strong></p>
+<p>例如<code>chip-lighting-app</code>：</p>
+<ul>
+<li><strong>Endpoint 0:</strong> 根端点 (Basic Information, Operational Credentials, etc.)。</li>
+<li><strong>Endpoint 1:</strong> 照明功能 (On&#x2F;Off Cluster, Level Control Cluster)。</li>
+</ul>
+<p><strong>Cluster</strong></p>
+<p>Endpoint由一个或多个cluster组成，cluster可以认为是一个基本功能集，它包含attributes（属性）， commands（命令）和events（事件）三个组件。</p>
+<p>Matter定义了两种类型的Cluster：</p>
+<p>​	Server：提供Attributes, Commands和Events</p>
+<p>​	Client：对Server发起交互（interaction）操作</p>
+<p>例如：</p>
+<p>​	<strong>OnOff Cluster (ID 0x0006)：</strong> 负责开关控制。</p>
+<p>​	<strong>Level Control Cluster (ID 0x0008)：</strong> 负责调节亮度或百分比等级。</p>
+<p>​	<strong>Color Control Cluster (ID 0x0300)：</strong> 负责颜色和色温控制。</p>
+<p>​	<strong>Basic Information Cluster (ID 0x0028)：</strong> 负责提供厂商、型号、软件版本等信息。</p>
+<p><strong>Attribute</strong></p>
+<p>Attribute就是一条条表示物理量或者状态的数据记录，他们保存在设备的存储器中。</p>
+<p>例如：</p>
+<ul>
+<li>在 <strong>OnOff Cluster</strong> 中：<ul>
+<li><strong><code>OnOff</code> 属性 (ID 0x0000)：</strong> 存储设备的开关状态 (<code>true</code> 或 <code>false</code>)</li>
+</ul>
+</li>
+<li>在 <strong>Level Control Cluster</strong> 中：<ul>
+<li><strong><code>CurrentLevel</code> 属性 (ID 0x0000)：</strong> 存储设备当前的亮度等级 (值范围 0-254)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Command</strong></p>
+<p>Command就是下文所说的action，用来触发server的特定行为。</p>
+<p>例如在Onoff Cluster中：</p>
+<p>​	<strong><code>On</code> 命令 (ID 0x01)：</strong> 告诉设备“请开灯”。</p>
+<p>​	<strong><code>	Off</code> 命令 (ID 0x00)：</strong> 告诉设备“请关灯”。</p>
+<p>​	<strong><code>	Toggle</code> 命令 (ID 0x02)：</strong> 告诉设备“切换当前状态”。</p>
+<p><strong>Event</strong></p>
+<p>​	Event其实是一种特殊的attribute，它用来更新设备的状态，因此你可以把event当成是一种历史数据记录。</p>
 
                 
               </div>
@@ -470,6 +465,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/matter/" class="category-chain-item">matter</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/matter/" class="print-no-link">#matter</a>
+      
+    </div>
   
 </div>
 
@@ -479,8 +502,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>rt_thread</div>
-      <div>https://lx2035.github.io/2026/06/28/rt-thread/</div>
+      <div>matter说明</div>
+      <div>https://lx2035.github.io/2026/06/27/matter说明/</div>
     </div>
     <div class="license-meta">
       
@@ -492,7 +515,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年6月28日</div>
+          <div>2026年6月27日</div>
         </div>
       
       
@@ -524,12 +547,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/06/27/RA4M2-SENSOR%E8%AF%95%E7%94%A8/" title="RA4M2-SENSOR试用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">RA4M2-SENSOR试用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/06/28/stm32cubeide-2-11/" title="stm32cubeide-2.11">
-                        <span class="hidden-mobile">stm32cubeide-2.11</span>
+                      <a href="/2026/06/27/matter%E7%BC%96%E8%AF%91/" title="matter编译">
+                        <span class="hidden-mobile">matter编译</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
